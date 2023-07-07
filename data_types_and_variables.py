@@ -18,7 +18,7 @@ B. Whether or not a user is logged in
 BOOLEAN
 
 C. A discount amount to apply to a user's shopping cart
-FLOAT
+FLOAT/INT
 
 D. Whether or not a coupon code is valid
 BOOLEAN
@@ -121,7 +121,8 @@ TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
 X = 3
 Y = 5
 Z = 1
-TOTAL = 3*X + 3*Y + 3*Z
+fee = 3
+TOTAL = (X+Y+Z) * fee
 
 print("The total cost of renting the movies was: $" + str(TOTAL))
 
@@ -192,6 +193,13 @@ pass_user = username != password
 print(pass_user)
 
 #Bonus Neither the username or password can start or end with whitespace
-bonus = (password[0]) != ' ' and (password[-1]) != ' ' and username[0] != ' ' and username[-1] != ' '
+bonus = password[0] != ' ' and password[-1] != ' ' and\
+        username[0] != ' ' and username[-1] != ' '
 
 print(bonus)
+
+better_bonus_pass = password == password.strip()
+better_bonus_user = username == username.strip()
+
+print(better_bonus_pass)
+print(better_bonus_user)
