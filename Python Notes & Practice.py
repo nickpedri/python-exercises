@@ -302,9 +302,20 @@ for student in students:
     print(student.get('student') + ' ' + str(len(student.get('pets'))) + ' pet(s)!')
 
 # How many students are in web development? data science?
+wed_dev_count = 0
+for student in students:
+    if student.get('course') == 'web development':
+        wed_dev_count += 1
 
+print(wed_dev_count)
 
 # What is the average number of pets for students in web development?
+pet_count = 0
+for student in students:
+    pet_count += len(student['pets'])
+
+print(pet_count)
+
 # What is the average pet age for students in data science?
 # What is most frequent coffee preference for data science students?
 # What is the least frequent coffee preference for web development students?
@@ -317,3 +328,14 @@ for student in students:
 # What is the most common type of pet for web development students?
 # What is the average name length?
 # What is the highest pet age for light coffee drinkers?
+
+
+
+############ FUNCTIONS
+
+def sayhello(name='World', greeting='Hello'):
+    return '{}, {}!'.format(greeting, name)
+
+print(sayhello('Codeup', greeting='Salutations')) # Okay
+
+
