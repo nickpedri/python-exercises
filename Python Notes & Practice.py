@@ -339,3 +339,11 @@ def sayhello(name='World', greeting='Hello'):
 print(sayhello('Codeup', greeting='Salutations')) # Okay
 
 
+#################################################################################################
+print('#################################################################################################')
+#################################################################################################
+
+import function_exercises as fe
+from function_exercises import is_consonant as cons
+
+print(cons('b'))

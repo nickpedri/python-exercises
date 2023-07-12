@@ -92,7 +92,7 @@ def get_letter_grade(grade):
     elif grade >= 60:
         letter_grade = 'D'
     else:
-        letter_grade = 'E'
+        letter_grade = 'F'
     return letter_grade   # returns letter grade after it has been assigned a value
 
 print(get_letter_grade(98))
