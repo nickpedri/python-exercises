@@ -41,6 +41,7 @@ def capitalize_if_consonant(x):
 print(capitalize_if_consonant('cheese'))
 print(capitalize_if_consonant('america'))
 print(capitalize_if_consonant('work'))
+print(capitalize_if_consonant('tork'))
 
 # 5. Define a function named calculate_tip. It should accept a tip percentage (a number between 0 and 1) and
 # the bill total, and return the amount to tip.
@@ -122,11 +123,13 @@ print('########### QUESTION 10 ###############')
 def normalize_name(x):
     normal_name = ''    # new blank local variable is created
     for l in x:
-        if l.isalpha() == True or l.isdigit() == True or l.isspace() == True:    #for loop to check each character if it is a
+        if l.isalnum() ==  True or l.isspace() == True:    #for loop to check each character if it is a
             normal_name += l                                        #letter, underscore, or number it gets added to new variable
     return normal_name.strip().lower().replace(' ','_')   # returns modified variable
 
 print(normalize_name('     XX%%FA jjSG   .fasd&@%^@#$fas    '))
+print(normalize_name('% Completed'))
+print(normalize_name('% Completed %'))
 
 # for example:
     # Name will become name
@@ -171,7 +174,27 @@ def twelveto24(x):
 
 print(twelveto24('8:30am'))
 print(twelveto24('8:30pm'))
+
+
+
 # 2. Create a function named col_index. It should accept a spreadsheet column name, and return the index number of the column.
     # col_index('A') returns 1
     # col_index('B') returns 2
     # col_index('AA') returns 27
+
+
+def col_index(x):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    n = 0
+    if len(x) > 1:
+        n += (26 * (len(x)-1))
+        n += alphabet.find(x[-1]) + 1
+    else:
+        n += alphabet.find(x) + 1
+    return n
+
+
+print(col_index('a'))
+print(col_index('AA'))
+print(col_index('AAA'))
+print(col_index('abc'))   # not done yet
