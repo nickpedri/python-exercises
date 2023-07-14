@@ -108,9 +108,22 @@ def categories():
 
 
 def history():
+    i = 0
     for t in c:
-        print(t)
+        print(f'{i+1}.) {t}')
+        i += 1
 
+def edit():
+    while True:
+        x = input('Would you like to modify a past transaction? Y/N ').lower()
+        if x == 'y':
+            history()
+            y = input('Which transaction would you like to modify? ')
+            pass
+        if x == 'n':
+            break
+        else:
+            print('Please enter Y or N.')
 
 def cats():
     x = categories()
