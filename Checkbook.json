@@ -1,9 +1,9 @@
 [
      {
           "amount": 1000.0,
-          "category": "Housing",
+          "category": "Savings",
           "date_time": "2023-07-13 20:46:41",
-          "description": "paycheck from work bro"
+          "description": "recieved paycheck from work"
      },
      {
           "amount": -100.5,

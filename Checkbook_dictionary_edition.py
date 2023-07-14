@@ -12,7 +12,7 @@ def choices():
     print('1) View current balance')
     print('2) Record a debit (withdraw)')
     print('3) Record a credit (deposit)')
-    print('4) Show transaction history')
+    print('4) Show/edit transaction history')
     print('5) Show categories')
     print('6) Search transactions')
     print('7) Exit')
@@ -113,17 +113,50 @@ def history():
         print(f'{i+1}.) {t}')
         i += 1
 
+
+def num_of_index():
+    indexes = []
+    for t in c:
+        indexes.append(str(c.index(t) + 1))
+    return indexes
+
+
 def edit():
     while True:
         x = input('Would you like to modify a past transaction? Y/N ').lower()
         if x == 'y':
             history()
-            y = input('Which transaction would you like to modify? ')
-            pass
+            while True:
+                y = input('Which transaction would you like to modify? ')
+                if y not in num_of_index():
+                    print('Transaction does not exist!')
+                else:
+                    break
+            while True:
+                z = input('What would you like to modify? Enter number: 1.) Category  2.) Description ')
+                print(z)
+                print(type(z))
+                if z == '1' or z == '2':
+                    break
+                else:
+                    print('Please enter a valid selection.')
+            if z == '1':
+                c[int(y) - 1]['category'] = categories()
+                with open('Checkbook.json', 'w') as f:
+                    json.dump(c, f, indent=5)
+                print('Changes applied!')
+                break
+            else:
+                c[int(y) - 1]['description'] = input('Enter changes: ')
+                with open('Checkbook.json', 'w') as f:
+                    json.dump(c, f, indent=5)
+                print('Changes applied!')
+                break
         if x == 'n':
             break
         else:
             print('Please enter Y or N.')
+
 
 def cats():
     x = categories()
@@ -163,7 +196,7 @@ while True:
         deposit()
     elif to_do == '4':
         history()
-        pass
+        edit()
     elif to_do == '5':
         cats()
     elif to_do == '6':
