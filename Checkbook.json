@@ -1,0 +1,38 @@
+[
+     {
+          "amount": 1000.0,
+          "category": "Housing",
+          "date_time": "2023-07-13 20:46:41",
+          "description": "paycheck from work bro"
+     },
+     {
+          "amount": -100.5,
+          "category": "Entertainment",
+          "date_time": "2023-07-13 23:11:09",
+          "description": "movies"
+     },
+     {
+          "amount": -50.5,
+          "category": "Housing",
+          "date_time": "2023-07-13 23:14:36",
+          "description": "groceries. bought some cake and egs and tomato"
+     },
+     {
+          "amount": 200000.0,
+          "category": "Housing",
+          "date_time": "2023-07-13 23:25:05",
+          "description": "sold house "
+     },
+     {
+          "amount": -10000.0,
+          "category": "Entertainment",
+          "date_time": "2023-07-13 23:28:41",
+          "description": "bought a boat"
+     },
+     {
+          "amount": -180000.5,
+          "category": "Housing",
+          "date_time": "2023-07-14 09:03:09",
+          "description": "bought a new house"
+     }
+]
